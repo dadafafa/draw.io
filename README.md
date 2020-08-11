@@ -14,7 +14,7 @@ Tutorial on setting up a VPN (copy from https://my.oschina.net/zhoudage/blog/163
   ****
 
 
-|---
+|---|
   |deb http://mirror.lzu.edu.cn/ubuntu/ precise main restricted universe multiverse |
   |deb http://mirror.lzu.edu.cn/ubuntu/ precise-security main restricted universe multiverse|
   |deb http://mirror.lzu.edu.cn/ubuntu/ precise-updates main restricted universe multiverse|
