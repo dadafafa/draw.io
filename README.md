@@ -159,7 +159,7 @@ ppp debug = yes
 pppoptfile = /etc/ppp/options.xl2tpd
 length bit = yes
 ```
-## #### 2.7 Modify PPP configuration
+#### 2.7 Modify PPP configuration
 
 ```
 $ sudo vi /etc/ppp/options.xl2tpd
@@ -208,7 +208,9 @@ username * password12345 *
  $ sudo iptables -A INPUT -p tcp --dport 47 -j ACCEPT 
  $ sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
  
-+ tips: Pay attention to fill in eth0, different machines are different, you can enter `ifconfig` in the terminal to view the network card network and the name of the network card
++ tips: Pay attention to fill in eth0, different machines are different,    
++ you can enter `ifconfig` in the terminal to view the network card network     
++ and the name of the network card
 ```
 # 4. Start VPN
  ```
