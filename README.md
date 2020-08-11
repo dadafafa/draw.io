@@ -1,6 +1,7 @@
 # vpn
 Tutorial on setting up a VPN (copy from https://my.oschina.net/zhoudage/blog/1630728 )
 
+
 # 1.Install openswan
  `$ sudo apt-get install openswan`
   if the are any error like Package ‘openswan‘ has no installation candidate,run the follow code:
