@@ -209,7 +209,7 @@ username * password12345 *
  $ sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
  
 + tips: Pay attention to fill in eth0, different machines are different,    
-+ you can enter `ifconfig` in the terminal to view the network card network     
++ you can enter `ifconfig` in the terminal to view the network card     
 + and the name of the network card
 ```
 # 4. Start VPN
@@ -219,12 +219,13 @@ username * password12345 *
 # 5. some error
  when you connect vpn use win10 and meet some error. Open Control Panel\Network and Internet\Network Connections. find the vpn connect which you set.Open its properties, check the protocol in the security column.
  
-```
-Allow use these protocols
-- [x] Unencrypted Password (PAP) (U)
-- [x] Challenge Handshake Authentication Protocol (CHAP) (H)
-- [x] duiduikuang'duiMicrosoft CHAP Version 2 (MS CHAP v2)
- ```
+
+`Allow use these protocols`
+- [x] Unencrypted Password (PAP) (U)   
+- [x] Challenge Handshake Authentication Protocol (CHAP) (H)   
+- [x] duiduikuang'duiMicrosoft CHAP Version 2 (MS CHAP v2)   
+
+
 # 6.reference
  [reference link which is Chinese]( https://my.oschina.net/zhoudage/blog/1630728 )
  
