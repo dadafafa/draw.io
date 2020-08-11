@@ -8,6 +8,7 @@ Tutorial on setting up a VPN (copy from https://my.oschina.net/zhoudage/blog/163
   if the are any error like Package ‘openswan‘ has no installation candidate,run the follow code:
   
   `sudo vi /etc/apt/sources.list.d/lzu.list`
+  
   `#add a sourse`
   
   copy the follow code to lzu.list
