@@ -71,9 +71,25 @@ conn L2TP-PSK-noNAT
         rightprotoport=17/%any
         forceencaps=yes
   ```
+  Pay attention to the prompt #behind, modify the IP 
    
-   
+  modify /etc/ipsec.secrets
+  ```
+  $ sudo vi /etc/ipsec.secrets
+  ```
+  *Here x.x.x.x is replaced with the public IP address of your server, and the password in "" is the password you set yourself, which will be used when the client connects
   
+  ```
+  x.x.x.x  %any: PSK "mima1234567890"
+  ```
+  save the above code and run the follow code in terminal
+  ```
   
+$ for each in /proc/sys/net/ipv4/conf/*
+  do
+    echo 0 > $each/accept_redirects
+    echo 0 > $each/send_redirects
+  done
+  ```
    
 
