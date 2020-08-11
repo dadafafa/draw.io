@@ -12,6 +12,7 @@ Tutorial on setting up a VPN (copy from https://my.oschina.net/zhoudage/blog/163
  copy the follow code to lzu.list
   
   ****
+  ```
  deb http://mirror.lzu.edu.cn/ubuntu/ precise main restricted universe multiverse
  deb http://mirror.lzu.edu.cn/ubuntu/ precise-security main restricted universe multiverse
  deb http://mirror.lzu.edu.cn/ubuntu/ precise-updates main restricted universe multiverse
@@ -22,7 +23,7 @@ Tutorial on setting up a VPN (copy from https://my.oschina.net/zhoudage/blog/163
  deb-src http://mirror.lzu.edu.cn/ubuntu/ precise-updates main restricted universe multiverse
  deb-src http://mirror.lzu.edu.cn/ubuntu/ precise-proposed main restricted universe multiverse
  deb-src http://mirror.lzu.edu.cn/ubuntu/ precise-backports main restricted universe multiverse
-  
+  ```
   
   ****
    
