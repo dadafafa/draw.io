@@ -69,7 +69,7 @@ conn L2TP-PSK-noNAT
         ikelifetime=8h
         keylife=1h
         type=transport
-        + #替换 IP 地址为你的公网IP
+        #替换 IP 地址为你的公网IP
         left=x.x.x.x
         leftprotoport=17/1701
         right=%any
