@@ -46,7 +46,7 @@
   $ sudo vi /etc/ipsec.conf
   
   copy the follow code to ipsec.conf 
-  ``` diff
+  ```diff
   config setup
         nat_traversal=yes
         virtual_private=%v4:10.0.0.0/8,%v4:192.168.0.0/16,%v4:172.16.0.0/12,%v4:!10.152.2.0/24
@@ -69,7 +69,7 @@ conn L2TP-PSK-noNAT
         ikelifetime=8h
         keylife=1h
         type=transport
-        + # 替换 IP 地址为你的公网IP
+        + #替换 IP 地址为你的公网IP
         left=x.x.x.x
         leftprotoport=17/1701
         right=%any
