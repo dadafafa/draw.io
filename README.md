@@ -1,9 +1,9 @@
 # vpn
-Tutorial on setting up a VPN ( [reference link which is Chinese]( https://my.oschina.net/zhoudage/blog/1630728 ))
+Tutorial on setting up a VPN (refer to a description of a logger,I put the link in the end)
 
 
 # 1.Install openswan
- `$ sudo apt-get install openswan`
+ `$ sudo apt-get install openswan` 
  
   if the are any error like Package ‘openswan‘ has no installation candidate,run the follow code:
   
@@ -210,4 +210,6 @@ Allow use these protocols
 √ Challenge Handshake Authentication Protocol (CHAP) (H)
 √ duiduikuang'duiMicrosoft CHAP Version 2 (MS CHAP v2)
  ```
+# 6.reference
+ [reference link which is Chinese]( https://my.oschina.net/zhoudage/blog/1630728 )
  
