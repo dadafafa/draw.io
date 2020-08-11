@@ -70,7 +70,7 @@ conn L2TP-PSK-noNAT
         ikelifetime=8h
         keylife=1h
         type=transport
-        *#replace the IP address with your public network IP*
+                                                   #replace the IP address with your public network IP
         left=x.x.x.x
         leftprotoport=17/1701
         right=%any
