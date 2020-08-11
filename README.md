@@ -10,7 +10,7 @@
  ***
 #### 1.2 if the are any error like `Package ‘openswan‘ has no installation candidate,run the follow code:
   
-  ```sudo vi /etc/apt/sources.list.d/lzu.list```
+  ```$ sudo vi /etc/apt/sources.list.d/lzu.list```
   
   #####  1.2.1 copy the follow code to lzu.list
   
@@ -185,7 +185,7 @@ mru 1404
 ```
 #### 2.8 add a client
 ```
-sudo vi /etc/ppp/chap-secrets
+$ sudo vi /etc/ppp/chap-secrets
 ```
 *Fill in the username and password (whatever you like)
 
