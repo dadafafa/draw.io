@@ -9,16 +9,12 @@ Tutorial on setting up a VPN (copy from https://my.oschina.net/zhoudage/blog/163
   
   `sudo vi /etc/apt/sources.list.d/lzu.list`
   
-  `#add a sourse`
-  
-  copy the follow code to lzu.list
+ copy the follow code to lzu.list
   
   ****
 
-|作者|果冻虾仁|
+|作者|dadafafa|
 |---|---
-|知乎|[![zhihu-shield]][zhihu]
-|公众号|编程往事
   |deb http://mirror.lzu.edu.cn/ubuntu/ precise main restricted universe multiverse |
   |deb http://mirror.lzu.edu.cn/ubuntu/ precise-security main restricted universe multiverse|
   |deb http://mirror.lzu.edu.cn/ubuntu/ precise-updates main restricted universe multiverse|
