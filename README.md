@@ -1,11 +1,12 @@
 # vpn
-Tutorial on setting up a VPN (refer to a description of a logger,I put the link in the end)
+ Tutorial on setting up a L2TP VPN Server (refer to a description of a logger,I put the link in the end)
 
 
-# 1.Install openswan
+## 1.Install openswan
+#### 1.1 run the fllow code
  ```$ sudo apt-get install openswan```
  
-  if the are any error like Package ‘openswan‘ has no installation candidate,run the follow code:
+  if the are any error like `Package ‘openswan‘ has no installation candidate,run the follow code:
   
   ```sudo vi /etc/apt/sources.list.d/lzu.list```
   
@@ -210,9 +211,9 @@ tips: Pay attention to fill in eth0, different machines are different, you can e
  
 ```
 Allow use these protocols
-√ Unencrypted Password (PAP) (U)
-√ Challenge Handshake Authentication Protocol (CHAP) (H)
-√ duiduikuang'duiMicrosoft CHAP Version 2 (MS CHAP v2)
+- [x] Unencrypted Password (PAP) (U)
+- [x] Challenge Handshake Authentication Protocol (CHAP) (H)
+- [x] duiduikuang'duiMicrosoft CHAP Version 2 (MS CHAP v2)
  ```
 # 6.reference
  [reference link which is Chinese]( https://my.oschina.net/zhoudage/blog/1630728 )
