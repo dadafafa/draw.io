@@ -1,5 +1,5 @@
 # vpn
-Tutorial on setting up a VPN (copy from https://my.oschina.net/zhoudage/blog/1630728 )
+Tutorial on setting up a VPN ( [reference link which is Chinese]( https://my.oschina.net/zhoudage/blog/1630728 ))
 
 
 # 1.Install openswan
