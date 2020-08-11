@@ -32,7 +32,7 @@ Tutorial on setting up a VPN (copy from https://my.oschina.net/zhoudage/blog/163
   $ sudo apt-get install openswan 
    #安装出现提示框，选择NO回车
 
-# 2. Install xl2tpd and  configure IPSec service
+# 2. Install xl2tpd and  configure IPSec service 
   
   $ sudo apt-get install xl2tpd
    
@@ -82,7 +82,7 @@ conn L2TP-PSK-noNAT
   ```
   x.x.x.x  %any: PSK "mima1234567890"
   ```
-  save the above code and run the follow code in terminal
+  save the above code and run the follow code in terminal to let IPSEC work
   ```
   
 $ for each in /proc/sys/net/ipv4/conf/*
@@ -91,5 +91,113 @@ $ for each in /proc/sys/net/ipv4/conf/*
     echo 0 > $each/send_redirects
   done
   ```
-   
+  Start IPSEC service and check if IPSEC is working properly
+  
+  ```
+  $ sudo /etc/init.d/ipsec start
+  # Use the following command to confirm whether ipsec is working properly
+  $ sudo ipsec verify
+  # Note: only if there is no Faild
+  ```
+  if the are any error,you could refer to the follow code
+  ```
+#error 1.Checking /bin/sh is not /bin/dash   [WARNING] run the follow code
+  $ sudo dpkg-reconfigure dash
+# select no as the English tips
 
+
+#error 2.pluto is running [FAILED]
+$ sudo /etc/init.d/ipsec start
+
+
+#error 3：NETKEY: Testing XFRM related proc values [FAILED]
+$ for each in /proc/sys/net/ipv4/conf/*
+do
+    echo 0 > $each/accept_redirects
+    echo 0 > $each/send_redirects
+done
+
+
+#error 4：Pluto listening for IKE on udp 500 [FAILED]
+$ apt-get install lsof
+
+
+#error 5：Hardware RNG detected, testing if used properly            [FAILED]
+$ sudo apt-get install rng-tools
+  ```
+  ***
+  
+ modify  /etc/xl2tpd/xl2tpd.conf
+ ```
+ $ sudo vi /etc/xl2tpd/xl2tpd.conf
+ ```
+ copy the follow contents to xl2tpd.conf
+ ```
+ [global]
+ipsec saref = yes
+
+[lns default]
+ip range = 10.10.20.100-10.10.20.254
+local ip = 10.10.20.1
+require chap = yes
+refuse pap = yes
+require authentication = yes
+ppp debug = yes
+pppoptfile = /etc/ppp/options.xl2tpd
+length bit = yes
+```
+## Modify PPP configuration
+
+```
+$ sudo vi /etc/ppp/options.xl2tpd
+```
+add the follow contents to options.xl2tpd
+```
+refuse-mschap-v2
+refuse-mschap
+ms-dns 8.8.8.8
+ms-dns 8.8.4.4
+asyncmap 0
+auth
+lock
+hide-password
+local
+#debug
+name l2tpd
+proxyarp
+lcp-echo-interval 30
+lcp-echo-failure 4
+mtu 1404
+mru 1404
+```
+add a client
+```
+sudo vi /etc/ppp/chap-secrets
+```
+Fill in the username and password (whatever you like)
+
+```
+username * password12345 *
+```
+# 3. Set forwarding
+ find the file which in /etc/sysctl.conf 
+ in /etc/sysctl.conf,you should find #net.ipv4.ip_forward=1  and remove #like follow
+ ```
+ net.ipv4.ip_forward=1
+ ```
+ run the code to make Configuration takes effect
+ $ sysctl -p
+ 
+ Allow gre protocol , port 1723 , port 47. Final open forward
+ ```
+ $ sudo iptables -A INPUT -p gre -j ACCEPT 
+ $ sudo iptables -A INPUT -p tcp --dport 1723 -j ACCEPT 
+ $ sudo iptables -A INPUT -p tcp --dport 47 -j ACCEPT 
+ $ sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+ 
+tips: Pay attention to fill in eth0, different machines are different, you can enter `ifconfig` in the terminal to view the network card network and the name of the network card
+```
+# 4. Start VPN
+ ```
+ $ sudo /etc/init.d/xl2tpd restart 
+ ```
