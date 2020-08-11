@@ -201,3 +201,13 @@ tips: Pay attention to fill in eth0, different machines are different, you can e
  ```
  $ sudo /etc/init.d/xl2tpd restart 
  ```
+# 5. some error
+ when you connect vpn use win10 and meet some error. Open Control Panel\Network and Internet\Network Connections. find the vpn connect which you set.Open its properties, check the protocol in the security column.
+ 
+```
+Allow use these protocols
+√ Unencrypted Password (PAP) (U)
+√ Challenge Handshake Authentication Protocol (CHAP) (H)
+√ duiduikuang'duiMicrosoft CHAP Version 2 (MS CHAP v2)
+ ```
+ 
