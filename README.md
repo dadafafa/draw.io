@@ -1,9 +1,4 @@
-```diff
-`!` 人闲桂花落，
- 夜静春山空。
- 月出惊山鸟，
- 时鸣春涧中。
-```
+
 # vpn
  Tutorial on setting up a L2TP VPN Server (refer to a description of a logger,I put the link in the end)
 
@@ -75,7 +70,7 @@ conn L2TP-PSK-noNAT
         ikelifetime=8h
         keylife=1h
         type=transport
-        #替换 IP 地址为你的公网IP
+        *#replace the IP address with your public network IP*
         left=x.x.x.x
         leftprotoport=17/1701
         right=%any
@@ -88,7 +83,7 @@ conn L2TP-PSK-noNAT
   ```
   $ sudo vi /etc/ipsec.secrets
   ```
-  *Here x.x.x.x is replaced with the public IP address of your server, and the password in "" is the password you set yourself, which will be used when the client connects
+  *Here x.x.x.x is replaced with the public IP address of your server, and the password in "" is the password you set yourself, which will be used when the client connects*
   
   ```
   x.x.x.x  %any: PSK "mima1234567890"
