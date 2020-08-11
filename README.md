@@ -3,11 +3,11 @@ Tutorial on setting up a VPN (refer to a description of a logger,I put the link 
 
 
 # 1.Install openswan
- `$ sudo apt-get install openswan` 
+ ```$ sudo apt-get install openswan```
  
   if the are any error like Package ‘openswan‘ has no installation candidate,run the follow code:
   
-  `sudo vi /etc/apt/sources.list.d/lzu.list`
+  ```sudo vi /etc/apt/sources.list.d/lzu.list```
   
  copy the follow code to lzu.list
   
@@ -27,10 +27,14 @@ Tutorial on setting up a VPN (refer to a description of a logger,I put the link 
   ****
    
   updata the sourse
+```
   $ sudo apt-get updata
+  ```
    install openswan 
+   ```
   $ sudo apt-get install openswan 
    #安装出现提示框，选择NO回车
+   ```
 
 # 2. Install xl2tpd and  configure IPSec service 
   
