@@ -83,7 +83,7 @@ conn L2TP-PSK-noNAT
         rightprotoport=17/%any
         forceencaps=yes
   ```
-  *Pay attention to the prompt #behind, modify the IP 
+  * Pay attention to the prompt #behind, modify the IP 
    
   #### 2.3 modify /etc/ipsec.secrets
   ```
