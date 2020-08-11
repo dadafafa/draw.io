@@ -12,7 +12,7 @@
   
   ```sudo vi /etc/apt/sources.list.d/lzu.list```
   
-  #####  1.2.1copy the follow code to lzu.list
+  #####  1.2.1 copy the follow code to lzu.list
   
 
   ```
@@ -42,7 +42,7 @@
 
 # 2. Install xl2tpd and  configure IPSec service 
   #### 2.1 run the fllow code
-  ```
+   ```
   $ sudo apt-get install xl2tpd
    ```
    
@@ -83,7 +83,7 @@ conn L2TP-PSK-noNAT
         rightprotoport=17/%any
         forceencaps=yes
   ```
-  *Pay attention to the prompt #behind, modify the IP *
+  *Pay attention to the prompt #behind, modify the IP 
    
   #### 2.3 modify /etc/ipsec.secrets
   ```
@@ -114,7 +114,7 @@ $ for each in /proc/sys/net/ipv4/conf/*
   **if the are any error,you could refer to the follow code**
   
   ```
-#error 1.Checking /bin/sh is not /bin/dash   [WARNING] run the follow code  //bash
+#error 1.Checking /bin/sh is not /bin/dash   [WARNING] run the follow code  
   $ sudo dpkg-reconfigure dash
 # select no as the English tips
 
@@ -140,11 +140,11 @@ $ sudo apt-get install rng-tools
   ```
   ***
   
- modify  /etc/xl2tpd/xl2tpd.conf
+ #### 2.6 modify  /etc/xl2tpd/xl2tpd.conf
  ```
  $ sudo vi /etc/xl2tpd/xl2tpd.conf
  ```
- copy the follow contents to xl2tpd.conf
+ #### 2.6 copy the follow contents to xl2tpd.conf
  ```
  [global]
 ipsec saref = yes
@@ -159,12 +159,12 @@ ppp debug = yes
 pppoptfile = /etc/ppp/options.xl2tpd
 length bit = yes
 ```
-## Modify PPP configuration
+## #### 2.7 Modify PPP configuration
 
 ```
 $ sudo vi /etc/ppp/options.xl2tpd
 ```
-add the follow contents to options.xl2tpd
+#### 2.7 add the follow contents to options.xl2tpd
 ```
 refuse-mschap-v2
 refuse-mschap
@@ -183,32 +183,32 @@ lcp-echo-failure 4
 mtu 1404
 mru 1404
 ```
-add a client
+#### 2.8 add a client
 ```
 sudo vi /etc/ppp/chap-secrets
 ```
-Fill in the username and password (whatever you like)
+*Fill in the username and password (whatever you like)
 
 ```
 username * password12345 *
 ```
 # 3. Set forwarding
- find the file which in /etc/sysctl.conf 
- in /etc/sysctl.conf,you should find #net.ipv4.ip_forward=1  and remove #like follow
+ #### 3.1 find the file which in /etc/sysctl.conf.
+ * in /etc/sysctl.conf,you should find #net.ipv4.ip_forward=1  and remove #like follow
  ```
  net.ipv4.ip_forward=1
  ```
- run the code to make Configuration takes effect
+ #### 3.2 run the code to make Configuration takes effect
  $ sysctl -p
  
- Allow gre protocol , port 1723 , port 47. Final open forward
- ```
+#### 3.3  Allow gre protocol , port 1723 , port 47. Final open forward
+ ```diff
  $ sudo iptables -A INPUT -p gre -j ACCEPT 
  $ sudo iptables -A INPUT -p tcp --dport 1723 -j ACCEPT 
  $ sudo iptables -A INPUT -p tcp --dport 47 -j ACCEPT 
  $ sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
  
-tips: Pay attention to fill in eth0, different machines are different, you can enter `ifconfig` in the terminal to view the network card network and the name of the network card
++ tips: Pay attention to fill in eth0, different machines are different, you can enter `ifconfig` in the terminal to view the network card network and the name of the network card
 ```
 # 4. Start VPN
  ```
