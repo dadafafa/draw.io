@@ -230,9 +230,9 @@ username * password12345 *
  [reference link which is Chinese]( https://my.oschina.net/zhoudage/blog/1630728 )
 
 # 7.summary
-If you restart your server,you could run the fllow conmand
+If you restart your server,you could run the fllow conmand to restart vpn
 ```
-#start ipsec etc, turn on dorward
+#start ipsec etc, turn on forward
 $ sudo /etc/init.d/ipsec start
 $ sudo /etc/init.d/xl2tpd restart 
 $ sudo iptables -A INPUT -p gre -j ACCEPT 
