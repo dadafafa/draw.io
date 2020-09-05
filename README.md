@@ -230,5 +230,15 @@ username * password12345 *
  [reference link which is Chinese]( https://my.oschina.net/zhoudage/blog/1630728 )
 
 # 7.summary
+If you restart your server,you could run the fllow conmand
+```
+#start ipsec etc, turn on dorward
+$ sudo /etc/init.d/ipsec start
+$ sudo /etc/init.d/xl2tpd restart 
+$ sudo iptables -A INPUT -p gre -j ACCEPT 
+$ sudo iptables -A INPUT -p tcp --dport 1723 -j ACCEPT 
+$ sudo iptables -A INPUT -p tcp --dport 47 -j ACCEPT 
+$ sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+```
  
  
