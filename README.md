@@ -32,7 +32,7 @@
   #####  1.2.2 updata the sourse
   
 ```
-  $ sudo apt-get updata
+  $ sudo apt-get update
   ```
   #####  1.2.3 install openswan 
    ```
