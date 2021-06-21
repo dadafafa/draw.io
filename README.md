@@ -30,12 +30,12 @@
   ```
  
    
-  ~~#####  1.2.2 updata the sourse~~
+  #####  ~~1.2.2 updata the sourse~~
   
 ```
   $ sudo apt-get update
   ```
-  ~~#####  1.2.3 install openswan ~~
+   #####  ~~1.2.3 install openswan ~~
    ```
   $ sudo apt-get install openswan 
    #安装出现提示框，选择NO回车
