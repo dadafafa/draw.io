@@ -5,13 +5,13 @@
 
 
 ## 1.Install openswan
-#### 1.1 run the fllow code
- ```$ sudo apt-get install openswan```
+#### ~~1.1 run the fllow code (Not Work)
+ ```$ sudo apt-get install openswan```~~
  
  ***
-#### 1.2 if the are any error like `Package ‘openswan‘ has no installation candidate,run the follow code:
+#### ~~1.2 if the are any error like `Package ‘openswan‘ has no installation candidate,run the follow code:~~
   
-  ```$ sudo vi /etc/apt/sources.list.d/lzu.list```
+```$ sudo vi /etc/apt/sources.list.d/lzu.list```
   
   #####  1.2.1 copy the follow code to lzu.list
   
@@ -30,16 +30,32 @@
   ```
  
    
-  #####  1.2.2 updata the sourse
+  ~~#####  1.2.2 updata the sourse
   
 ```
   $ sudo apt-get update
   ```
-  #####  1.2.3 install openswan 
+  ~~#####  1.2.3 install openswan 
    ```
   $ sudo apt-get install openswan 
    #安装出现提示框，选择NO回车
    ```
+   
+   #### 1.2 open the link download (v2.6.52.2 I choise)
+   https://github.com/xelerance/Openswan/releases
+   ```
+      tar -xzvf Openswan-2.6.52.3.tar.gz
+    
+     #if you are new os: run 
+       apt-get install build-essential  # this is the make don't use apt-get install make(need other dependency)
+       apt-get install bison
+       apt-get install flex
+       apt-get install libgmp3-dev
+       
+       cd Oemswan---
+       make programs install
+   ```
+       
 
 # 2. Install xl2tpd and  configure IPSec service 
   #### 2.1 run the fllow code
